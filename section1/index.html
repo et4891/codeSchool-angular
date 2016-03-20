@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="gemStore">
 <head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.v4.css">-->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/bootstrap.min.v311.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body class="container" ng-controller="StoreController as store">
-    <!--<ul class="list-group">-->
-        <!--<li class="list-group-item" ng-repeat="product in store.products">-->
-            <!--<h3>-->
-                <!--{{ product.name }}-->
-                <!--<em class="pull-right">{{ product.price | currency}}</em>-->
-            <!--</h3>-->
-        <!--</li> &lt;!&ndash; end .list-group-item div &ndash;&gt;-->
-    <!--</ul>&lt;!&ndash; end .list-group div &ndash;&gt;-->
-    <!-- Products COntainer -->
-    <div class="product row" ng-repeat="product in store.products">
-        <h3>
-            {{ product.name }}
-            <em class="pull-right">{{ product.price | currency}}</em>
-        </h3>
-    </div> <!-- end .product.row div -->
+<body ng-controller="StoreController as store">
+    <!--Products Container-->
+    <div class="list-group">
+        <!-- Product Container -->
+        <div class="list-group-item" ng-repeat="product in store.products">
+            <h3>
+                {{ product.name }}
+                <em class="pull-right">{{ product.price | currency}}</em>
+            </h3>
+
+            <!--Image Gallery-->
+            <div class="gallery">
+                <div class="img-wrap">
+                    <img ng-src="{{ product.images[0] }}" alt="">
+                </div>
+                <ul class="img-thumbnails clearfix">
+                    <li class="small-image pull-left thumbnail">
+                        <img ng-src="{{ product.images[0] }}" alt="">
+                    </li>
+                </ul>
+            </div> <!-- end Image Gallery -->
+        </div> <!-- end Product container div -->
+    </div><!-- end Products container -->
 
     <!--include scripts-->
     <script src="js/angular.min.js"></script>
