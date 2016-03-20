@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gemStore">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body class="container" ng-controller="StoreController as store">
+    <!--<ul class="list-group">-->
+        <!--<li class="list-group-item" ng-repeat="product in store.products">-->
+            <!--<h3>-->
+                <!--{{ product.name }}-->
+                <!--<em class="pull-right">{{ product.price | currency}}</em>-->
+            <!--</h3>-->
+        <!--</li> &lt;!&ndash; end .list-group-item div &ndash;&gt;-->
+    <!--</ul>&lt;!&ndash; end .list-group div &ndash;&gt;-->
+    <!-- Products COntainer -->
+    <div class="product row" ng-repeat="product in store.products">
+        <h3>
+            {{ product.name }}
+            <em class="pull-right">{{ product.price | currency}}</em>
+        </h3>
+    </div> <!-- end .product.row div -->
+
+    <!--include scripts-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
