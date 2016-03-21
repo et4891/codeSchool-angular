@@ -113,5 +113,15 @@
        };
     });
 
+    //Review Form Controller
+    app.controller("ReviewController", function(){
+       // initial review as empty object
+       this.review = {};
+       this.addReview = function(product){
+           product.reviews.push(this.review);
+           this.review = {};
+       };
+    });
+
 
 })();
