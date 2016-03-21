@@ -19,16 +19,43 @@
             </h3>
 
             <!--Image Gallery-->
-            <div class="gallery">
+            <div class="gallery" ng-show="product.images.length"> <!-- this helps to check if there are images, if not then the rest will not show -->
                 <div class="img-wrap">
                     <img ng-src="{{ product.images[0] }}" alt="">
                 </div>
                 <ul class="img-thumbnails clearfix">
-                    <li class="small-image pull-left thumbnail">
-                        <img ng-src="{{ product.images[0] }}" alt="">
+                    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+                        <img ng-src="{{ image }}" alt="">
                     </li>
                 </ul>
             </div> <!-- end Image Gallery -->
+
+            <!--Tabs-->
+            <section class="tab" ng-controller="TabController as panel">
+                <ul class="nav nav-pills">
+                    <li ng-class="{active: panel.isSet(1)}">
+                        <a href="" ng-click="panel.setTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{active: panel.isSet(2)}">
+                        <a href="" ng-click="panel.setTab(2)">Specs</a>
+                    </li>
+                    <li ng-class="{active: panel.isSet(3)}">
+                        <a href="" ng-click="panel.setTab(3)">Reviews</a>
+                    </li>
+                </ul>
+                <div ng-show="panel.isSet(1)">
+                    <h4>Description</h4>
+                    <blockquote>{{ product.description }}</blockquote>
+                </div>
+                <div ng-show="panel.isSet(2)">
+                    <h4>Specs</h4>
+                    <blockquote>Shine: {{ product.shine }}</blockquote>
+                </div>
+                <div ng-show="panel.isSet(3)">
+                    <h4>Reviews</h4>
+                    <blockquote></blockquote>
+                </div>
+            </section>
         </div> <!-- end Product container div -->
     </div><!-- end Products container -->
 

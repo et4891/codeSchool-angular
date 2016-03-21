@@ -90,5 +90,28 @@
         this.products = gems;
     });
 
+    //Controller for the tab panel
+    app.controller("TabController", function(){
+       this.tab = 1;
+       this.setTab = function(setTab){
+           this.tab = setTab;
+       };
+       this.isSet = function(isSet){
+           return this.tab === isSet;
+       };
+    });
+
+    //Controller for Gallery
+    app.controller("GalleryController", function(){
+       this.current = 0;
+       this.setCurrent = function(setCurren){
+           if(setCurrent === null){
+               this.current = 0;
+           }else{
+               this.current = setCurrent;
+           }
+       }
+    });
+
 
 })();
