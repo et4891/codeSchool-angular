@@ -104,13 +104,13 @@
     //Controller for Gallery
     app.controller("GalleryController", function(){
        this.current = 0;
-       this.setCurrent = function(setCurren){
+       this.setCurrent = function(setCurrent){
            if(setCurrent === null){
                this.current = 0;
            }else{
                this.current = setCurrent;
            }
-       }
+       };
     });
 
 
