@@ -1,0 +1,10 @@
+<div class="gallery" ng-show="product.images.length"> <!-- this helps to check if there are images, if not then the rest will not show -->
+    <div class="img-wrap">
+        <img ng-src="{{ product.images[gallery.current] }}" alt="">
+    </div>
+    <ul class="img-thumbnails clearfix">
+        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{ image }}" alt="">
+        </li>
+    </ul>
+</div>

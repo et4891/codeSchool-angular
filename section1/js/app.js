@@ -83,35 +83,35 @@
 
     //Create a Module named gemStore so we can get started on this marketing journey
     //Attach the gemStore module to our HTML page with a Directive
-    var app = angular.module("gemStore", []);
+    var app = angular.module("gemStore", ['store-directives']);
 
     //Storing data inside the controller
     app.controller('StoreController', function(){
         this.products = gems;
     });
 
-    //Controller for the tab panel
-    app.controller("TabController", function(){
-       this.tab = 1;
-       this.setTab = function(setTab){
-           this.tab = setTab;
-       };
-       this.isSet = function(isSet){
-           return this.tab === isSet;
-       };
-    });
+    //Controller for the tab panel //removed and inserted into directives for refactoring purpose
+    // app.controller("TabController", function(){
+    //    this.tab = 1;
+    //    this.setTab = function(setTab){
+    //        this.tab = setTab;
+    //    };
+    //    this.isSet = function(isSet){
+    //        return this.tab === isSet;
+    //    };
+    // });
 
-    //Controller for Gallery
-    app.controller("GalleryController", function(){
-       this.current = 0;
-       this.setCurrent = function(setCurrent){
-           if(setCurrent === null){
-               this.current = 0;
-           }else{
-               this.current = setCurrent;
-           }
-       };
-    });
+    //Controller for Gallery  //removed and inserted into directives for refactoring purpose
+    // app.controller("GalleryController", function(){
+    //    this.current = 0;
+    //    this.setCurrent = function(setCurrent){
+    //        if(setCurrent === null){
+    //            this.current = 0;
+    //        }else{
+    //            this.current = setCurrent;
+    //        }
+    //    };
+    // });
 
     //Review Form Controller
     app.controller("ReviewController", function(){
@@ -123,6 +123,8 @@
            this.review = {};
        };
     });
+    
+    
 
 
 })();
